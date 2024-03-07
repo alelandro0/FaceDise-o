@@ -12,6 +12,7 @@ const ParticlesBackground = () => {
     return (
         <div>
             <Particles id="tsparticles" options={particlesConfig} init={particlesInit} />
+            
         </div>
     )
 }

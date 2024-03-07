@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { FaBars, FaTimes } from "react-icons/fa"
 import { Link } from "react-scroll"
+import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
-
     const links = [
         {
             id: 1,
@@ -61,9 +61,12 @@ const Navbar = () => {
             <ul className='hidden lg:flex'>
                 {links.map(({ id, link }) => (
                     <li key={id} className='cursor-pointer hover:scale-105 rounded-lg hover:bg-purple-600  hover: p-4 duration-200 text-[1.1rem] lg:text-[1.3rem] hover:opacity-70'>
-                        <Link to={link} smooth duration={500}>{link}</Link>
+                        {link === "Iniciar Sesion" ? (
+                            <RouterLink to="/iniciar-sesion">{link}</RouterLink>
+                        ) : (
+                            <Link to={link} smooth duration={500}>{link}</Link>
+                        )}
                     </li>
-
                 ))}
             </ul>
 
@@ -73,21 +76,23 @@ const Navbar = () => {
 
             {isShowNav && (
                 <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black via-black to-purple-600 opacity-90'>
-
                     {links.map(({ id, link }) => (
                         <li
                             key={id}
                             className='px-4 cursor-pointer py-6 text-4xl opacity-100'>
-                            <Link
-                                onClick={() => setIsShowNav(!isShowNav)}
-                                to={link}
-                                smooth
-                                duration={500}>{link}</Link>
+                            {link === "Iniciar Sesion" ? (
+                                <RouterLink to="/iniciar-sesion" onClick={() => setIsShowNav(!isShowNav)}>{link}</RouterLink>
+                            ) : (
+                                <Link
+                                    onClick={() => setIsShowNav(!isShowNav)}
+                                    to={link}
+                                    smooth
+                                    duration={500}>{link}</Link>
+                            )}
                         </li>
                     ))}
-                </ul>)}
-
-
+                </ul>
+            )}
         </header>
     )
 }
