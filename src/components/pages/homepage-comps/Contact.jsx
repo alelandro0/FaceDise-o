@@ -12,16 +12,16 @@ const Contact = () => {
 
         const formData = new FormData(event.target);
 
-        axios.post('https://getform.io/f/feff19e5-27a9-4f74-be5d-9699c4b245ed', formData)
+        axios.post('https://getform.io/f/raeggela', formData)
             .then(response => {
                 Swal.fire({
                     icon: 'success',
-                    iconColor: '#0DFC4B',
-                    title: 'Thank you for contacting me. It will be a pleasure to work with you!',
+                    iconColor: '#7F3FF5',
+                    title: 'Gracias por contactarme. ¡Será un placer trabajar contigo!',
                     showConfirmButton: true,
                     background: '#191a19',
                     color: '#fff',
-                    confirmButtonColor: '#117911',
+                    confirmButtonColor: '#7F3FF5',
                     backdrop: `
                         rgba(54, 55, 54,0.4)
                     `

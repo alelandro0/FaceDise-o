@@ -13,7 +13,7 @@ const SocialLinks = () => {
                 Facebook <FaFacebook size={30} />
                 </>
             ),
-            href: 'https://www.linkedin.com/in/diegotellezc/',
+            href: '#',
             style: 'rounded-tr-md'
         },
         {
